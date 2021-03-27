@@ -1,0 +1,33 @@
+﻿@page
+@model VarnaTour.Pages.Beaches.BeachesDetailsModel
+
+@{
+    ViewData["Title"] = "BeachesDetails";
+}
+
+
+
+<h1>Beaches Details</h1>
+
+@foreach (var item in Model.Beach)
+{
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+
+                <img src="@item.Image" alt="" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <p>@Html.DisplayFor(modelItem => item.MiniContent)</p>
+                <p>@Html.DisplayFor(modelItem => item.Content)</p>
+            </div>
+        </div>
+    </div>
+
+
+}
+
+
+

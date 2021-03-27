@@ -1,0 +1,111 @@
+﻿@page
+@model VarnaTour.Pages.Beaches.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+@using VarnaTour.Enums;
+<h1>Create</h1>
+
+<h4>Beach</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Beach.Title" class="control-label"></label>
+                <input asp-for="Beach.Title" class="form-control" />
+                <span asp-validation-for="Beach.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beach.Image" class="control-label"></label>
+                <input asp-for="Beach.Image" class="form-control" />
+                <span asp-validation-for="Beach.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beach.MiniContent" class="control-label"></label>
+                <input asp-for="Beach.MiniContent" class="form-control" />
+                <span asp-validation-for="Beach.MiniContent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beach.Content" class="control-label"></label>
+                <input asp-for="Beach.Content" class="form-control" />
+                <span asp-validation-for="Beach.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.HasRestourant" /> @Html.DisplayNameFor(model => model.Beach.HasRestourant)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.HasLifeguard" /> @Html.DisplayNameFor(model => model.Beach.HasLifeguard)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.HasMedicalStaff" /> @Html.DisplayNameFor(model => model.Beach.HasMedicalStaff)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.IsSuitableForChildren" /> @Html.DisplayNameFor(model => model.Beach.IsSuitableForChildren)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.HasDressingRoom" /> @Html.DisplayNameFor(model => model.Beach.HasDressingRoom)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.HasShower" /> @Html.DisplayNameFor(model => model.Beach.HasShower)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.HasParking" /> @Html.DisplayNameFor(model => model.Beach.HasParking)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.HasCarAccess" /> @Html.DisplayNameFor(model => model.Beach.HasCarAccess)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.HasUmbrellaAndSunbed" /> @Html.DisplayNameFor(model => model.Beach.HasUmbrellaAndSunbed)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.IsDisabilitiesFriendly" /> @Html.DisplayNameFor(model => model.Beach.IsDisabilitiesFriendly)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Beach.IsDisabilitiesFriendly" /> @Html.DisplayNameFor(model => model.Beach.IsDisabilitiesFriendly)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Beach.BeachType" class="control-label"></label>
+                <select asp-for="Beach.BeachType" asp-items="Html.GetEnumSelectList<BeachType>()" class="form-control"></select>
+                <span asp-validation-for="Beach.BeachType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

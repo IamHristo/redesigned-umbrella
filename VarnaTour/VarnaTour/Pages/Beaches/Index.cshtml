@@ -1,0 +1,120 @@
+﻿@page
+@model VarnaTour.Pages.Beaches.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].MiniContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasRestourant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasLifeguard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasMedicalStaff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].IsSuitableForChildren)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasDressingRoom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasShower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasParking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasCarAccess)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasUmbrellaAndSunbed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].IsDisabilitiesFriendly)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].BeachType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Beach) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <img src="@item.Image" alt="" style="width:100px;height:100px;">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiniContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasRestourant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasLifeguard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasMedicalStaff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsSuitableForChildren)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasDressingRoom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasShower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasParking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasCarAccess)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasUmbrellaAndSunbed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDisabilitiesFriendly)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeachType)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
