@@ -14,5 +14,6 @@ namespace VarnaTour.Data
         {
         }
         public DbSet<VarnaTour.Models.Beach> Beach { get; set; }
+        public DbSet<VarnaTour.Models.Site> Site { get; set; }
     }
 }

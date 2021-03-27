@@ -204,3 +204,8 @@ D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_Va
 D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Pages\Beaches\BeachesDetails.cshtml.g.cs
 D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Pages\UserURL.cshtml.g.cs
+D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Pages\Sites\Create.cshtml.g.cs
+D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Pages\Sites\Delete.cshtml.g.cs
+D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Pages\Sites\Details.cshtml.g.cs
+D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Pages\Sites\Edit.cshtml.g.cs
+D:\Hackathon\VarnaTour\VarnaTour\obj\Debug\net5.0\Razor\Pages\Sites\Index.cshtml.g.cs

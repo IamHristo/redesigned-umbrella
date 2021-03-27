@@ -10,3 +10,77 @@
     You do not have a local username/password for this site. Add a local
     account so you can log in without an external login.
 </p>
+
+<table class="table">
+    @*<thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SiteList[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].MiniContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasRestourant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasLifeguard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasMedicalStaff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].IsSuitableForChildren)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasDressingRoom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasShower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasParking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasCarAccess)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].HasUmbrellaAndSunbed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].IsDisabilitiesFriendly)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beach[0].BeachType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>*@
+    <tbody>
+        @foreach (var item in Model.SiteList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <img src="@item.Image" alt="" style="width:100px;height:100px;">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
