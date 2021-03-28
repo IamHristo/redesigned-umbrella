@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using VarnaTour.Data;
 
@@ -30,19 +31,31 @@ namespace VarnaTour
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDatabaseDeveloperPageExceptionFilter();
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddRoleManager<RoleManager<IdentityRole>>()
+                .AddUserManager<UserManager<IdentityUser>>();
+
             services.AddRazorPages().
                 AddRazorPagesOptions( confg =>
                 {
                     confg.Conventions.AuthorizePage("/UserURL");
+                    confg.Conventions.AuthorizeFolder("/Beaches", "RequireAdministratorRole");
                 });
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("Admin", policy =>
-            //        policy.RequireRole.)
-            //});
+
+
+
+            services.AddAuthorization(config =>
+            {
+                config.AddPolicy("RequireAdministratorRole",
+                    policy => policy.RequireClaim(ClaimTypes.Role, "Administrator"));
+                config.AddPolicy("RequireMemberRole",
+                    policy => policy.RequireRole("User"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +85,33 @@ namespace VarnaTour
             {
                 endpoints.MapRazorPages();
             });
+        }
+
+        private async Task CreateSuperUser(UserManager<IdentityUser> userManager)
+        {
+            var superUser = new IdentityUser { UserName = Configuration["SuperUserLogin"], Email = Configuration["SuperUserLogin"] };
+            await userManager.CreateAsync(superUser, Configuration["SuperUserPassword"]);
+            var token = await userManager.GenerateEmailConfirmationTokenAsync(superUser);
+            await userManager.ConfirmEmailAsync(superUser, token);
+            await userManager.AddToRoleAsync(superUser, "Admin");
+        }
+
+        private async Task CreateRolesAsync(IServiceProvider serviceProvider)
+        {
+            //adding custom roles
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            string[] roleNames = { "Admin", "User" };
+            IdentityResult roleResult;
+
+            foreach (var roleName in roleNames)
+            {
+                //creating the roles and seeding them to the database
+                var roleExist = await RoleManager.RoleExistsAsync(roleName);
+                if (!roleExist)
+                {
+                    roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
+                }
+            }
         }
     }
 }
