@@ -60,7 +60,18 @@ namespace VarnaTour.Pages
                 dataReader.Close();
                 sql = "INSERT INTO dbo.Site_AspNetUsers(IdUser, IdSite) VALUES('" + IdUser + "', '" + IdSite + "')";
                 command = new SqlCommand(sql, cn);
-                command.ExecuteReader();
+
+                try
+                {
+                    command.ExecuteReader();
+                }
+                catch (Exception)
+                {
+
+                    IdSite = -1;
+                }
+
+                
             }
 
             dataReader.Close();

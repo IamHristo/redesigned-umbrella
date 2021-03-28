@@ -33,16 +33,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Beaches/Index">Плажове</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/BeachesDetails">Плажове</a>
                         </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Beaches/BeachesDetails">Плажове За Потребители</a>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Туристически курорти</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Beaches/Index">Туристически курорти</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Beaches/Index">Забележителности</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Забележителности</a>
                         </li>
 
                     </ul>
@@ -55,6 +55,7 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
 
         <footer class="border-top footer text-muted">
             <div class="container">
@@ -93,5 +94,6 @@
         <script src="js/waypoints.min.js"></script>
         <script src="js/script.js"></script>
         @await RenderSectionAsync("Scripts", required: false)
+        
 </body>
 </html>

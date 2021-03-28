@@ -45,6 +45,7 @@ namespace VarnaTour
                 {
                     confg.Conventions.AuthorizePage("/UserURL");
                     confg.Conventions.AuthorizeFolder("/Beaches", "RequireAdministratorRole");
+                    confg.Conventions.AuthorizeFolder("/Sites", "RequireAdministratorRole");
                 });
 
 
