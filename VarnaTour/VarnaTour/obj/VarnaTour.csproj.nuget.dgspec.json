@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Hackathon\\VarnaTour\\VarnaTour\\VarnaTour.csproj": {}
+    "E:\\Hackathon Smart Solutions for Varna 2021\\redesigned-umbrella\\VarnaTour\\VarnaTour\\VarnaTour.csproj": {}
   },
   "projects": {
-    "D:\\Hackathon\\VarnaTour\\VarnaTour\\VarnaTour.csproj": {
+    "E:\\Hackathon Smart Solutions for Varna 2021\\redesigned-umbrella\\VarnaTour\\VarnaTour\\VarnaTour.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hackathon\\VarnaTour\\VarnaTour\\VarnaTour.csproj",
+        "projectUniqueName": "E:\\Hackathon Smart Solutions for Varna 2021\\redesigned-umbrella\\VarnaTour\\VarnaTour\\VarnaTour.csproj",
         "projectName": "VarnaTour",
-        "projectPath": "D:\\Hackathon\\VarnaTour\\VarnaTour\\VarnaTour.csproj",
-        "packagesPath": "C:\\Users\\hrist\\.nuget\\packages\\",
-        "outputPath": "D:\\Hackathon\\VarnaTour\\VarnaTour\\obj\\",
+        "projectPath": "E:\\Hackathon Smart Solutions for Varna 2021\\redesigned-umbrella\\VarnaTour\\VarnaTour\\VarnaTour.csproj",
+        "packagesPath": "C:\\Users\\angel\\.nuget\\packages\\",
+        "outputPath": "E:\\Hackathon Smart Solutions for Varna 2021\\redesigned-umbrella\\VarnaTour\\VarnaTour\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\hrist\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\angel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -87,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
